@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   mode: "production",
@@ -28,6 +29,11 @@ module.exports = {
         }
       }
     ]
+  },
+  optimization: {
+    usedExports: true,
+    minimize: true,
+    minimizer: [new TerserPlugin()]
   },
   plugins: [
     new HtmlWebpackPlugin(),

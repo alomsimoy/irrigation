@@ -1,4 +1,7 @@
 import { h, render, Component } from 'preact';
+import mockApi from './mockApi';
+
+mockApi();
 
 class App extends Component {
   // Add `name` to the initial state
@@ -29,4 +32,13 @@ class App extends Component {
   }
 }
 
+const getSprinklers = () => {
+  console.log('fetching');
+  fetch('/api/sprinkler')
+    .then(response => console.log(response.json()));
+};
+
+getSprinklers();
+
 render(<App />, document.body);
+
