@@ -19,3 +19,6 @@ uploadfs:
 
 update:
 	platformio -f -c vim update
+
+serial:
+	picocom /dev/ttyUSB0 -b 115200
