@@ -1,3 +1,5 @@
+**/node_modules
+**/dist
 .pio
 .clang_complete
 .gcc-flags.json
